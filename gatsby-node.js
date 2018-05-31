@@ -9,6 +9,15 @@
  const path = require(`path`);
  const { createFilePath } = require(`gatsby-source-filesystem`);
 
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  if (stage === "build-html") {
+    config.loader("null", {
+      test: /bootstrap/,
+      loader: "null-loader",
+    });
+  }
+};
+
  exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
    const { createNodeField } = boundActionCreators
    if (node.internal.type === `MarkdownRemark`) {
