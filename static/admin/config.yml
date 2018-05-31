@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/media
+public_folder: /media
+
+collections:
+  - name: "criticas"
+    label: "Críticas"
+    folder: "src/pages/criticas"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Image", name: "image", widget: image}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
