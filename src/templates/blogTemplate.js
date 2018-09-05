@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from 'gatsby'
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -12,7 +13,7 @@ export default function Template({
         <h2 className="mb-3">{frontmatter.title}</h2>
         <div className="row">
           <div className="col-lg-8">
-            <img src={frontmatter.image} className="w-100 mb-3"/>
+            <img src={frontmatter.image} className="w-100 mb-3" alt=""/>
             <h5 className="mb-3">{frontmatter.subtitle}</h5>
             <div dangerouslySetInnerHTML={{ __html: html }} />
           </div>
@@ -61,7 +62,7 @@ export default function Template({
     return (
       <div>
         <h2 className="mb-3">{frontmatter.title}</h2>
-        <img src={frontmatter.image} className="w-100 mb-3"/>
+        <img src={frontmatter.image} className="w-100 mb-3" alt=""/>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     )

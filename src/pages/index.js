@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import { graphql } from 'gatsby'
 
 export default class IndexPage extends React.Component {
   render() {
@@ -20,7 +21,7 @@ export default class IndexPage extends React.Component {
               <div className="carousel-inner">
                 {posts
                   .map(({ node: post }, index) => (
-                    <div className={"carousel-item " + (index == 0 ? "active" : "")} key={post.id}>
+                    <div className={"carousel-item " + (index === 0 ? "active" : "")} key={post.id}>
                       <Link to={post.fields.slug}>
                         <img className="d-block w-100" src={post.frontmatter.image} alt="" style={{filter: "brightness(.5)"}}/>
                         <div className="carousel-caption d-none d-md-block">
@@ -44,7 +45,7 @@ export default class IndexPage extends React.Component {
             </div>
           </div>
           <div className="col-md-4">
-            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcineilustre%2F&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=true&amp;appId" width="100%" height="300" style={{border:"none", overflow:"hidden"}} scrolling="no" frameBorder="0" allowTransparency="true"></iframe>
+            <iframe title="facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcineilustre%2F&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=true&amp;appId" width="100%" height="300" style={{border:"none", overflow:"hidden"}} scrolling="no" frameBorder="0" allowtransparency="true"></iframe>
           </div>
         </div>
         <h5 className="font-weight-bold text-uppercase bg-dark text-white p-2 rounded mb-3">Últimas Críticas</h5>
@@ -55,7 +56,7 @@ export default class IndexPage extends React.Component {
               <div className="col-md-4 mb-3" key={post.id}>
                 <div className="card">
                   <Link to={post.fields.slug}>
-                    <img className="img-fluid" src={post.frontmatter.image}/>
+                    <img className="img-fluid" src={post.frontmatter.image} alt=""/>
                   </Link>
                   <div className="card-body">
                     <div className="font-weight-bold text-uppercase">{post.frontmatter.title}</div>
@@ -80,7 +81,7 @@ export default class IndexPage extends React.Component {
                 <div className="row">
                   <div className="col-md-6 mb-3">
                     <Link to={post.fields.slug}>
-                      <img className="w-100" src={post.frontmatter.image}/>
+                      <img className="w-100" src={post.frontmatter.image} alt=""/>
                     </Link>
                   </div>
                   <div className="col-md-6 mb-3">
@@ -103,7 +104,7 @@ export default class IndexPage extends React.Component {
             <div className="row" key={post.id}>
               <div className="col-md-2 mb-3">
                 <Link to={post.fields.slug}>
-                  <img className="w-100" src={post.frontmatter.image}/>
+                  <img className="w-100" src={post.frontmatter.image} alt=""/>
                 </Link>
               </div>
               <div className="col-md-10 mb-3">

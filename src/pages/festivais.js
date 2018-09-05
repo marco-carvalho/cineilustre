@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import { graphql } from 'gatsby'
 
 export default class IndexPage extends React.Component {
   render() {
@@ -16,7 +17,7 @@ export default class IndexPage extends React.Component {
               <div className="col-md-4 mb-3" key={post.id}>
                 <div className="card">
                   <Link to={post.fields.slug}>
-                    <img className="img-fluid" src={post.frontmatter.image}/>
+                    <img className="img-fluid" src={post.frontmatter.image} alt=""/>
                   </Link>
                   <div className="card-body">
                     <div className="font-weight-bold text-uppercase">{post.frontmatter.title}</div>
