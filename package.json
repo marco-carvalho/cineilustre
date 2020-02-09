@@ -14,7 +14,7 @@
     "gatsby-source-filesystem": "^1.5.38",
     "gatsby-transformer-remark": "^1.7.43",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.3",
+    "popper.js": "^1.16.1",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
