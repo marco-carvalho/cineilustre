@@ -15,7 +15,7 @@
     "gatsby-transformer-remark": "^1.7.43",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^6.1.0"
   },
   "keywords": [
     "gatsby"
